@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CommentsList/> should render 1`] = `
+<CommentsListContainer
+  comments={
+    Array [
+      Object {
+        "created": "a day ago",
+        "id": 1,
+        "message": "Another great test case! Love to see it.",
+        "name": "Cedric",
+      },
+    ]
+  }
+>
+  <CommentsList>
+    <styled.ul>
+      <ul
+        className="sc-eCApnc kacMPJ"
+      >
+        <Component
+          created="a day ago"
+          id={1}
+          key="1"
+          message="Another great test case! Love to see it."
+          name="Cedric"
+        >
+          <styled.li>
+            <li
+              className="sc-jSFjdj fuuqgA"
+            >
+              <styled.p>
+                <p
+                  className="sc-gKAaRy"
+                >
+                  Another great test case! Love to see it.
+                </p>
+              </styled.p>
+              <styled.small>
+                <small
+                  className="sc-iCoGMd"
+                >
+                  Cedric at a day ago
+                </small>
+              </styled.small>
+            </li>
+          </styled.li>
+        </Component>
+      </ul>
+    </styled.ul>
+  </CommentsList>
+</CommentsListContainer>
+`;
+
+exports[`<CommentsList/> should render with no comments provided 1`] = `
+<CommentsListContainer>
+  <CommentsList>
+    <styled.ul>
+      <ul
+        className="sc-eCApnc kacMPJ"
+      />
+    </styled.ul>
+  </CommentsList>
+</CommentsListContainer>
+`;

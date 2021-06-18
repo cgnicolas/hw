@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App/> should render the application 1`] = `
+<div
+  className="appContainer"
+>
+  <FormContainer
+    error={null}
+    loading={true}
+    onSubmit={[Function]}
+  />
+  <CommentsListContainer
+    comments={Array []}
+    error={null}
+    loading={true}
+  />
+</div>
+`;
