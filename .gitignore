@@ -23,7 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 
-database.sqlite3
 
 .DS_Store
 

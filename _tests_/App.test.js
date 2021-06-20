@@ -59,18 +59,23 @@ describe('<App/>', () => {
       expect(API.post).toHaveBeenCalled();
     });
 
-    it('should handle an error response from comment creation', () => {
+    it('should handle an error response from comment creation', async () => {
       const renderedModule = shallow(<App />);
-      API.post.mockImplementationOnce(
-        () => new Promise((resolve, reject) => reject(BAD_RESPONSE))
-      );
-      return renderedModule
-        .find('FormContainer')
-        .props()
-        .onSubmit()
-        .catch((err) => {
-          expect(err).toBe(BAD_RESPONSE);
-        });
+      API.post.mockImplementationOnce(() => Promise.reject(BAD_RESPONSE))
+      const formContainer = renderedModule.find('FormContainer')
+      await formContainer.props().onSubmit();
+      expect(mockSetState).toHaveBeenCalledWith(BAD_RESPONSE);
     });
   });
+
+  describe('Comment Refresh', () => {
+    
+    it('should refresh the comments successfully', () => {
+      const renderedModule = shallow(<App/>);
+      API.get.mockImplementationOnce(() => Promise.resolve(mockComments));
+      renderedModule.find('CommentsListContainer').props().onRefresh();
+      expect(mockSetState).toHaveBeenCalledWith(mockComments);
+    })
+
+  })
 });

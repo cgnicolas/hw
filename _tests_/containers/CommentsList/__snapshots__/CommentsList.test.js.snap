@@ -7,59 +7,187 @@ exports[`<CommentsList/> should render 1`] = `
       Object {
         "created": "a day ago",
         "id": 1,
-        "message": "Another great test case! Love to see it.",
+        "message": "I give this Test Suite a 10 out of 10!",
         "name": "Cedric",
       },
     ]
   }
 >
   <CommentsList>
-    <styled.ul>
+    <div
+      className="flex flex-grow flex-col mt-4 justify-center"
+    >
+      <Button
+        className="shadow-md"
+      >
+        <button
+          className="p-2 rounded-md text-white font-bold bg-blue-500 hover:bg-blue-700 focus:bg-blue-700 cursor-pointer shadow-md"
+        >
+          Refresh Comments
+        </button>
+      </Button>
       <ul
-        className="sc-eCApnc kacMPJ"
+        className="flex-grow h-0 list-none mt-4 space-y-2 w-full overflow-y-auto"
       >
         <Component
           created="a day ago"
           id={1}
           key="1"
-          message="Another great test case! Love to see it."
+          message="I give this Test Suite a 10 out of 10!"
           name="Cedric"
         >
-          <styled.li>
-            <li
-              className="sc-jSFjdj fuuqgA"
-            >
-              <styled.p>
-                <p
-                  className="sc-gKAaRy"
-                >
-                  Another great test case! Love to see it.
-                </p>
-              </styled.p>
-              <styled.small>
-                <small
-                  className="sc-iCoGMd"
-                >
-                  Cedric at a day ago
-                </small>
-              </styled.small>
-            </li>
-          </styled.li>
+          <div
+            className="py-4 px-8 bg-white border-gray-300 rounded-md"
+          >
+            <p>
+              I give this Test Suite a 10 out of 10!
+            </p>
+            <small>
+              Cedric at a day ago
+            </small>
+          </div>
         </Component>
       </ul>
-    </styled.ul>
+    </div>
+  </CommentsList>
+</CommentsListContainer>
+`;
+
+exports[`<CommentsList/> should render while loading 1`] = `
+<CommentsListContainer
+  comments={
+    Array [
+      Object {
+        "created": "a day ago",
+        "id": 1,
+        "message": "I give this Test Suite a 10 out of 10!",
+        "name": "Cedric",
+      },
+    ]
+  }
+  loading={true}
+>
+  <CommentsList>
+    <div
+      className="flex flex-grow flex-col mt-4 justify-center"
+    >
+      <Button
+        className="shadow-md"
+      >
+        <button
+          className="p-2 rounded-md text-white font-bold bg-blue-500 hover:bg-blue-700 focus:bg-blue-700 cursor-pointer shadow-md"
+        >
+          Refresh Comments
+        </button>
+      </Button>
+      <ul
+        className="flex-grow h-0 list-none mt-4 space-y-2 w-full overflow-y-auto"
+      >
+        <Component>
+          <div
+            className="py-4 px-8 bg-white border-gray-300 rounded-md"
+          >
+            <div
+              className="animate-pulse flex space-x-4"
+            >
+              <div
+                className="flex-1 space-y-4 py-1"
+              >
+                <div
+                  className="h-4 bg-blue-400 rounded w-3/4"
+                />
+                <div
+                  className="space-y-2"
+                >
+                  <div
+                    className="h-4 bg-blue-400 rounded"
+                  />
+                  <div
+                    className="h-4 bg-blue-400 rounded w-5/6"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </Component>
+        <Component
+          created="a day ago"
+          id={1}
+          key="1"
+          message="I give this Test Suite a 10 out of 10!"
+          name="Cedric"
+        >
+          <div
+            className="py-4 px-8 bg-white border-gray-300 rounded-md"
+          >
+            <p>
+              I give this Test Suite a 10 out of 10!
+            </p>
+            <small>
+              Cedric at a day ago
+            </small>
+          </div>
+        </Component>
+      </ul>
+    </div>
+  </CommentsList>
+</CommentsListContainer>
+`;
+
+exports[`<CommentsList/> should render with an error 1`] = `
+<CommentsListContainer
+  error={true}
+>
+  <CommentsList>
+    <div
+      className="flex flex-grow flex-col mt-4 justify-center"
+    >
+      <Button
+        className="shadow-md"
+      >
+        <button
+          className="p-2 rounded-md text-white font-bold bg-blue-500 hover:bg-blue-700 focus:bg-blue-700 cursor-pointer shadow-md"
+        >
+          Refresh Comments
+        </button>
+      </Button>
+      <ul
+        className="flex-grow h-0 list-none mt-4 space-y-2 w-full overflow-y-auto"
+      >
+        <p>
+          Something went wrong loading the comments. Please try again.
+        </p>
+      </ul>
+    </div>
   </CommentsList>
 </CommentsListContainer>
 `;
 
 exports[`<CommentsList/> should render with no comments provided 1`] = `
-<CommentsListContainer>
+<CommentsListContainer
+  loading={false}
+>
   <CommentsList>
-    <styled.ul>
+    <div
+      className="flex flex-grow flex-col mt-4 justify-center"
+    >
+      <Button
+        className="shadow-md"
+      >
+        <button
+          className="p-2 rounded-md text-white font-bold bg-blue-500 hover:bg-blue-700 focus:bg-blue-700 cursor-pointer shadow-md"
+        >
+          Refresh Comments
+        </button>
+      </Button>
       <ul
-        className="sc-eCApnc kacMPJ"
-      />
-    </styled.ul>
+        className="flex-grow h-0 list-none mt-4 space-y-2 w-full overflow-y-auto"
+      >
+        <p>
+          No posts to display. You should change that!
+        </p>
+      </ul>
+    </div>
   </CommentsList>
 </CommentsListContainer>
 `;

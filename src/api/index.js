@@ -19,7 +19,6 @@ const API = {
 
   get() {
     const path = '/getComments';
-    console.log(url);
     return this.call(url + path, 'get');
   },
 

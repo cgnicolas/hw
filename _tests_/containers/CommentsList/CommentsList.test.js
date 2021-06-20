@@ -20,7 +20,17 @@ describe('<CommentsList/>', () => {
   });
 
   it('should render with no comments provided', () => {
-    const renderedModule = mount(<CommentsList />);
+    const renderedModule = mount(<CommentsList loading={false}/>);
     expect(renderedModule).toMatchSnapshot();
   });
+
+  it('should render with an error', () => {
+    const renderedModule = mount(<CommentsList error/>);
+    expect(renderedModule).toMatchSnapshot();
+  })
+
+  it('should render while loading', () => {
+    const renderedModule = mount(<CommentsList loading {...mockProps}/>);
+    expect(renderedModule).toMatchSnapshot();
+  })
 });

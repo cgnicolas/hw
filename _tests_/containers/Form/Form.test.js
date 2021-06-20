@@ -22,7 +22,6 @@ describe('<Form/>', () => {
     describe('setName', () => {
       it('should set the name of the user', () => {
         const renderedModule = mount(<Form />);
-        console.log(renderedModule.find('input#user-name').debug());
         act(() =>
           renderedModule.find('input#user-name').props().onChange(event)
         );
@@ -33,7 +32,6 @@ describe('<Form/>', () => {
     describe('setMessage', () => {
       it('should set the message input by the user', () => {
         const renderedModule = mount(<Form />);
-        console.log(renderedModule.find('textarea#user-message').debug());
         act(() =>
           renderedModule.find('textarea#user-message').props().onChange(event)
         );

@@ -11,7 +11,6 @@ export default function FormContainer({ onSubmit, loading }) {
       name,
       id: uuidv4(),
     }).then(() => {
-      setName('');
       setMessage('');
     });
   };
@@ -20,18 +19,20 @@ export default function FormContainer({ onSubmit, loading }) {
     <Form onSubmit={formSubmission}>
       <Form.Input
         name="Name"
-        placeholder="Enter your name"
+        placeholder="Who are you posting as?"
         value={name}
         id="user-name"
         onChange={({ target: { value } }) => setName(value)}
       />
-      <Form.CommentTextArea
-        placeholder="Join the discussion!"
-        value={message}
-        id="user-message"
-        onChange={({ target: { value } }) => setMessage(value)}
-      />
-      <Form.Button disabled={loading}>Comment</Form.Button>
+      <Form.MessageContainer>
+        <Form.MessageInput
+          placeholder="Join the discussion!"
+          value={message}
+          id="user-message"
+          onChange={({ target: { value } }) => setMessage(value)}
+        />
+        <Form.Button disabled={loading || !message}>Post</Form.Button>
+      </Form.MessageContainer>
     </Form>
   );
 }

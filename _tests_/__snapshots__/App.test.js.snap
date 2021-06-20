@@ -2,17 +2,22 @@
 
 exports[`<App/> should render the application 1`] = `
 <div
-  className="appContainer"
+  className="bg-blue-100 h-screen w-screen"
 >
-  <FormContainer
-    error={null}
-    loading={true}
-    onSubmit={[Function]}
-  />
-  <CommentsListContainer
-    comments={Array []}
-    error={null}
-    loading={true}
-  />
+  <div
+    className="m-auto flex flex-col w-1/2 h-full min-w-xs md:px-0"
+  >
+    <FormContainer
+      error={null}
+      loading={true}
+      onSubmit={[Function]}
+    />
+    <CommentsListContainer
+      comments={Array []}
+      error={null}
+      loading={true}
+      onRefresh={[Function]}
+    />
+  </div>
 </div>
 `;

@@ -8,17 +8,21 @@ exports[`<Form/> should render successfully 1`] = `
     id="user-name"
     name="Name"
     onChange={[Function]}
-    placeholder="Enter your name"
-    value=""
-  />
-  <Component
-    id="user-message"
-    onChange={[Function]}
-    placeholder="Join the discussion!"
+    placeholder="Who are you posting as?"
     value=""
   />
   <Component>
-    Comment
+    <Component
+      id="user-message"
+      onChange={[Function]}
+      placeholder="Join the discussion!"
+      value=""
+    />
+    <Component
+      disabled={true}
+    >
+      Post
+    </Component>
   </Component>
 </FormComponent>
 `;

@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "cors": "^2.8.5",
+    "craco": "^0.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -15,8 +16,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "craco start",
+    "build": "craco build",
     "test": "jest ./_tests_ -u",
     "eject": "react-scripts eject",
     "server": "nodemon server"
@@ -43,6 +44,7 @@
     "@babel/preset-env": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.2",
+    "autoprefixer": "^9",
     "body-parser": "1.18.3",
     "concurrently": "^4.1.0",
     "enzyme": "^3.11.0",
@@ -51,8 +53,10 @@
     "express": "4.16.4",
     "jest-styled-components": "^7.0.4",
     "nodemon": "^1.18.10",
+    "postcss": "^7",
     "react-test-renderer": "^17.0.2",
-    "sqlite3": "^4.0.7"
+    "sqlite3": "^4.0.7",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   },
   "jest": {
     "snapshotSerializers": [
